@@ -1,8 +1,21 @@
 .my-bg-color{
-    background-color: palevioletred;
+    background-image: url(../img/minefield-background.jpg);
     height:85vh;
 }
 
+
+.my-brown-bg{
+    background-color:rgba(191, 124, 43, 0.5);
+}
+img{
+    width:10%;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    color: purple;
+}
 
 
 #my-grid{
@@ -35,10 +48,10 @@
 }
 
 .my-square.active{
-    background-color: purple;
+    background-color: rgb(123, 123, 71);
 }
 
 .my-square.bomb{
-    background-color: red;
+    background-color: rgb(152, 19, 19);
     color:black;
 }
