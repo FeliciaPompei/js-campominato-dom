@@ -52,7 +52,7 @@ function gridSquares (){
    for(let i= 1; i <= squareNumber; i++){
       const currentSquare = square(i, cellsPerRow);
 
-      currentSquare.addEventListener('click', function(e){
+      currentSquare.addEventListener('click', function(){
 
          if(bombs.includes(i)){
             this.classList.add('bomb');
@@ -113,3 +113,4 @@ function playerPoint (elementId, strg){
    document.getElementById(elementId).innerHTML = strg;
 
 }
+
