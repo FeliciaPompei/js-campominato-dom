@@ -1,0 +1,44 @@
+.my-bg-color{
+    background-color: palevioletred;
+    height:85vh;
+}
+
+
+
+#my-grid{
+    width:72vh;
+    height: 72vh;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+
+    align-items:center;
+
+}
+
+.my-square{
+    /* width: calc(100% / 7);
+    height: calc(100% / 7); */
+    border: black solid 2px;
+
+    cursor: pointer;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:0;
+}
+
+.my-square span{
+    color: white;
+    font-weight:600;
+}
+
+.my-square.active{
+    background-color: purple;
+}
+
+.my-square.bomb{
+    background-color: red;
+    color:black;
+}
