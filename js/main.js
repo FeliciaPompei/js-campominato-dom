@@ -11,6 +11,7 @@ const gridWrapper = document.getElementById('my-grid');
 
 const buttonPlay = document.querySelector('button');
 
+
 // let difficoltyLevel = document.querySelector('select').value;
 
 
@@ -57,7 +58,7 @@ function gridSquares (){
          if(bombs.includes(i)){
             this.classList.add('bomb');
             playerPoint("game-results", `You hit a bomb, your score is ${points} `);
-            
+            gameOver (currentSquare);
 
          } else {
             this.classList.add('active');
@@ -114,3 +115,7 @@ function playerPoint (elementId, strg){
 
 }
 
+function gameOver (square){
+   isGameOver = true;
+   console.log("GameOver");
+}

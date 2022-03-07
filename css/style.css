@@ -55,3 +55,7 @@ a{
     background-color: rgb(152, 19, 19);
     color:black;
 }
+
+.my-block{
+    display:block;
+}
