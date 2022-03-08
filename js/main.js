@@ -30,6 +30,8 @@ function gridSquares (){
 
    gridWrapper.innerHTML = '';
 
+   let isGameOver = false;
+
    let difficoltyLevel = document.querySelector('select').value;
    console.log(difficoltyLevel);
 
@@ -55,17 +57,21 @@ function gridSquares (){
 
       currentSquare.addEventListener('click', function(){
 
-         if(bombs.includes(i)){
-            this.classList.add('bomb');
-            playerPoint("game-results", `You hit a bomb, your score is ${points} `);
-            gameOver (currentSquare);
-
-         } else {
-            this.classList.add('active');
-            points++;
-            playerPoint("game-results", `Your score is ${points} `);
+         if (!isGameOver){
+            if(bombs.includes(i)){
+               this.classList.add('bomb');
+               playerPoint("game-results", `You hit a bomb, your score is ${points} `);
+               isGameOver = true;
+               explodeBombs(bombs , 'bomb');
+   
+            } else {
+               this.classList.add('active');
+               points++;
+               playerPoint("game-results", `Your score is ${points} `);
+               
+            }
          }
-         })
+         }, {once: true} )
          gridWrapper.appendChild(currentSquare);
       }
 
@@ -115,7 +121,13 @@ function playerPoint (elementId, strg){
 
 }
 
-function gameOver (square){
-   isGameOver = true;
-   console.log("GameOver");
+function explodeBombs (bombList, addClassBomb){
+   const cell = gridWrapper.children;
+   console.log(cell);
+  for (let i = 1; i <= cell.length; i++){
+   if (bombList.includes(parseInt(cell[i].firstChild.innerHTML))){
+      cell.classList.add(addClassBomb);
+   }
+  }
+
 }
