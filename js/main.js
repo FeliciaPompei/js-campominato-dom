@@ -62,7 +62,7 @@ function gridSquares (){
                this.classList.add('bomb');
                playerPoint("game-results", `You hit a bomb, your score is ${points} `);
                isGameOver = true;
-               explodeBombs('my-grid',bombs, 'bomb');
+               explodeBombs(bombs, 'bomb');
    
             } else {
                this.classList.add('active');
@@ -121,9 +121,8 @@ function playerPoint (elementId, strg){
 
 }
 
-function explodeBombs (parentElement, bombList, addClassName){
-   const cells = document.getElementById(parentElement).children;
-   console.log(cells);
+function explodeBombs (bombList, addClassName){
+   const cells = gridWrapper.children;
    for (let i = 0; i < cells.length; i++){
       if (bombList.includes(parseInt(cells[i].firstChild.innerHTML))){
          cells[i].classList.add(addClassName);
