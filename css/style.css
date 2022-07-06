@@ -1,12 +1,5 @@
-.my-bg-color{
-    background-image: url(../img/minefield-background.jpg);
-    height:85vh;
-}
+/* Main */
 
-
-.my-brown-bg{
-    background-color:rgba(191, 124, 43, 0.5);
-}
 img{
     width:10%;
     vertical-align: middle;
@@ -17,29 +10,24 @@ a{
     color: purple;
 }
 
-
-#my-grid{
-    width:72vh;
-    height: 72vh;
-    padding:0;
-    display:flex;
-    flex-wrap:wrap;
-
-    align-items:center;
-
+.my-bg-color{
+    height:85vh;
+    background-image: url(../img/minefield-background.jpg);
 }
 
-.my-square{
-    /* width: calc(100% / 7);
-    height: calc(100% / 7); */
-    border: black solid 2px;
+.my-brown-bg{
+    background-color:rgba(191, 124, 43, 0.5);
+}
 
-    cursor: pointer;
-    
+
+.my-square{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:0;
+
+    border: black solid 2px;
+    cursor: pointer;
 }
 
 .my-square span{
@@ -52,10 +40,21 @@ a{
 }
 
 .my-square.bomb{
-    background-color: rgb(152, 19, 19);
     color:black;
+    background-color: rgb(152, 19, 19);
 }
 
 .my-block{
     display:block;
+}
+
+#my-grid{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+
+    width:72vh;
+    height: 72vh;
+
+    padding:0;
 }

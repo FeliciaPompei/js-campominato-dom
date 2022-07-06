@@ -7,14 +7,11 @@
 
 */
 
+// Variables & consts.
 const gridWrapper = document.getElementById('my-grid');
-
 const buttonPlay = document.querySelector('button');
 
-
-// let difficoltyLevel = document.querySelector('select').value;
-
-
+// event listeners
 buttonPlay.addEventListener('click', function(){
    gridSquares ();
 });
@@ -26,6 +23,9 @@ buttonPlay.addEventListener('click', function(){
  * 
  */
 
+/**
+ * gridSquares
+ */
 function gridSquares (){
 
    gridWrapper.innerHTML = '';
@@ -79,6 +79,12 @@ function gridSquares (){
       console.log(bombs);
    }
 
+/**
+ * 
+ * @param number number 
+ * @returns the correct number of squares for the difficolty level
+ */
+
 function square(number){
 
       newSquare = document.createElement('div');
@@ -88,7 +94,12 @@ function square(number){
       newSquare.innerHTML = `<span>${number}</span> `;
       return newSquare;
 }
-
+/**
+ * 
+ * @param number bombNumber 
+ * @param number squareNumber 
+ * @returns the number of bomb for the selected level
+ */
 function bombListNumbers (bombNumber, squareNumber){
    bombList =[];
    for (let x = 0; x < bombNumber; x++){
@@ -97,12 +108,26 @@ function bombListNumbers (bombNumber, squareNumber){
    return bombList;
 }
 
+/**
+ * 
+ * @param number min 
+ * @param number max 
+ * @returns a random number between min and max
+ */
 function randomNumber (min, max){
    if (isNaN(parseInt(min)) || (isNaN(parseInt(min)))){
       console.log('min or max isn\'t a number');
    }
    return Math.floor(Math.random() * ((max +1) - min + min));
 }
+
+/**
+ * 
+ * @param array generatedBombList 
+ * @param number min 
+ * @param number max 
+ * @returns a random number that isn't existen in the given array
+ */
 
 function isOnBlackList (generatedBombList, min, max){
    let check = false;
@@ -116,10 +141,22 @@ function isOnBlackList (generatedBombList, min, max){
    return randomNum;
 }
 
+/**
+ * 
+ * @param number elementId 
+ * @param string strg 
+ */
+
 function playerPoint (elementId, strg){
    document.getElementById(elementId).innerHTML = strg;
 
 }
+
+/**
+ * 
+ * @param array bombList 
+ * @param string addClassName 
+ */
 
 function explodeBombs (bombList, addClassName){
    const cells = gridWrapper.children;
